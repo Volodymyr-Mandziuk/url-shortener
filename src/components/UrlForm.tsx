@@ -22,10 +22,6 @@ const isValidHttpUrl = (value: string): string | null => {
       ? new URL(value)
       : new URL(`https://${value}`);
 
-    // if (url.protocol !== "http:" && url.protocol !== "https:") {
-    //   return null;
-    // }
-
     if (!["http:", "https:"].includes(url.protocol)) {
       return null;
     }
@@ -33,10 +29,7 @@ const isValidHttpUrl = (value: string): string | null => {
     const hostname = url.hostname;
 
     // Reject single-word hostnames like "abc"
-    if (
-      !hostname.includes(".") &&
-      hostname !== "localhost"
-    ) {
+    if (!hostname.includes(".") && hostname !== "localhost") {
       return null;
     }
 
@@ -67,8 +60,6 @@ const UrlForm: React.FC = () => {
       return;
     }
 
-    // if (!originalUrl) return;
-
     setLoading(true);
 
     try {
@@ -97,11 +88,8 @@ const UrlForm: React.FC = () => {
       await navigator.clipboard.writeText(shortUrl);
       setCopied(true);
       toast.success("Copied to clipboard!");
-
-      // Reset feedback after 2 seconds
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      // console.error("Failed to copy:", err);
       toast.error("Failed to copy");
     }
   };
@@ -109,7 +97,8 @@ const UrlForm: React.FC = () => {
   return (
     <div className="url-form">
       <form onSubmit={handleSubmit}>
-        <input className="url-input"
+        <input
+          className="url-input"
           type="text"
           inputMode="url"
           autoComplete="off"
@@ -118,15 +107,12 @@ const UrlForm: React.FC = () => {
           onChange={(e) => setOriginalUrl(e.target.value)}
           required
         />
-        {error && (
-          <div className="error-text">
-            {error}
-          </div>
-        )}
-        <button 
+        {error && <div className="error-text">{error}</div>}
+        <button
           type="submit"
           disabled={loading}
-          className={`submit-btn ${loading ? "loading" : ""}`}>
+          className={`submit-btn ${loading ? "loading" : ""}`}
+        >
           {loading ? "Saving..." : "Shorten"}
         </button>
       </form>
@@ -140,12 +126,11 @@ const UrlForm: React.FC = () => {
             </a>
           </div>
 
-          <button className="copy-btn"
+          <button
+            className="copy-btn"
             onClick={handleCopy}
-            // disabled={copied}
             title="Copy to clipboard"
           >
-            {/* {copied ? "Copied!" : "Copy to clipboard"} */}
             {copied ? <Check size={20} color="green" /> : <Copy size={20} />}
           </button>
         </div>

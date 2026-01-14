@@ -17,7 +17,6 @@
   font-size: 1rem;
   opacity: 1;
   transition: opacity 0.2s ease;
-  /* opacity: loading ? 0.7 : 1; */
 }
 
 .submit-btn.loading {
