@@ -31,7 +31,6 @@ It allows users to shorten URLs, copy them to the clipboard, and track visit cou
 
 ### Desktop
 ![Desktop view](screenshots/main-page-desktop.png)
-![Desktop view](screenshots/url-generated-desktop.png)
 
 ### Mobile
 ![Mobile view](screenshots/mobile.png)
