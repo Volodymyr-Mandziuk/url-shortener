@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "url-shortener-62866"
-  }
+    "default": "my-portfolio-4c115",
+    "portfolio": "my-portfolio-4c115"
+  },
+  "targets": {},
+  "etags": {}
 }
