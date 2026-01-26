@@ -12,7 +12,9 @@
 A modern **URL shortener web application** built with **Vite, React, TypeScript, and Firebase**.  
 Users can shorten long URLs, copy them to the clipboard, and track visit counts in real time.
 
-🔗 **Live Demo:** https://url-shortener-62866.web.app
+### 🔗 Live Demo
+👉 https://url-shortener-vm.web.app
+
 
 ---
 
