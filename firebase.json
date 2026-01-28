@@ -1,6 +1,7 @@
 {
   "hosting": {
     "site": "url-shortener-vm",
+    "target": "url-shortener-vm",
     "public": "dist",
     "ignore": [
       "firebase.json",
