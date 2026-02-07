@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/url-shortener">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/404" element={<NotFound />} />
