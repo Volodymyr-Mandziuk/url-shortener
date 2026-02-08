@@ -7,5 +7,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: true
+  },
+  build: {
+    outDir: "../portfolio-main/dist/url-shortener",
+    emptyOutDir: true
   }
 })
