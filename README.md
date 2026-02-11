@@ -13,7 +13,7 @@ A modern **URL shortener web application** built with **Vite, React, TypeScript,
 Users can shorten long URLs, copy them to the clipboard, and track visit counts in real time.
 
 ### 🔗 Live Demo
-👉 https://url-shortener-vm.web.app
+👉 https://my-portfolio-841e6.web.app/url-shortener
 
 
 ---

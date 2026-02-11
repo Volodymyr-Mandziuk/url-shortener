@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { Copy, Check } from "lucide-react";
 import "./UrlForm.css";
 
-// Function to generate random short code
 const generateShortCode = (length: number = 6) => {
   const chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -54,7 +53,7 @@ const UrlForm: React.FC = () => {
 
     if (!validatedUrl) {
       setError(
-        "Please enter a valid URL (e.g. google.com or https://example.com)"
+        "Please enter a valid URL (e.g. google.com or https://example.com)",
       );
       toast.error("Invalid URL");
       return;
@@ -69,9 +68,11 @@ const UrlForm: React.FC = () => {
         clicks: 0,
         createdAt: Timestamp.now(),
         originalUrl: validatedUrl,
+        createdUrl: `${window.location.origin}/url-shortener/${shortCode}`,
       });
 
-      setShortUrl(`${window.location.origin}/${shortCode}`);
+      setShortUrl(`${window.location.origin}/url-shortener/${shortCode}`);
+     
       setOriginalUrl("");
       toast.success("Short URL created!");
     } catch {
